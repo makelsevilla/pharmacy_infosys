@@ -50,7 +50,7 @@ public class Medicine {
     }
 
     public void display() {
-        System.out.println("ID: " + id + ", Name: " + name + ", Category: " + category + ", Price: $" + price
+        System.out.println("ID: " + id + ", Name: " + name + ", Category: " + category + ", Price: Php " + price
                 + ", Stock: " + stockQuantity + ", Expiry: " + expiryDate + ", Manufacturer: " + manufacturer);
     }
 }

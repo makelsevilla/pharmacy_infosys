@@ -47,3 +47,12 @@
 ## Sample Interaction
 
 ![sample interaction](./resources/sample_interaction.jpeg)
+
+## Sample users
+
+- Pharmacist
+    - username: pharmacist
+    - password: 1234
+- Assistant
+    - username: assistant
+    - password: 1234

@@ -4,9 +4,17 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class MedicineManager {
-    private static Scanner scanner = new Scanner(System.in);
+    private static final Scanner scanner = new Scanner(System.in);
     private final List<Medicine> medicines = new ArrayList<>();
     private int medicineIdCounter = 1;
+
+    public MedicineManager() {
+        medicines.add(new Medicine(1, "Paracetamol", "Painkiller", 1.99, 50, new Date(2025 - 1900, 5, 1), "ABC Pharma"));
+        medicines.add(new Medicine(2, "Aspirin", "Painkiller", 2.49, 5, new Date(2024 - 1900, 2, 15), "XYZ Pharma"));
+        medicines.add(new Medicine(3, "Amoxicillin", "Antibiotic", 12.99, 20, new Date(2024 - 1900, 10, 30), "MediCare"));
+        medicines.add(new Medicine(4, "Cetirizine", "Antihistamine", 4.99, 100, new Date(2026 - 1900, 1, 20), "HealthCorp"));
+        medicines.add(new Medicine(5, "Ibuprofen", "Painkiller", 3.49, 8, new Date(2024 - 1900, 7, 15), "Wellness Inc."));
+    }
 
     public void manageMedicines() {
         while (true) {
@@ -20,6 +28,7 @@ public class MedicineManager {
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
             scanner.nextLine();
+            System.out.println();
 
             switch (choice) {
                 case 1:
@@ -55,8 +64,12 @@ public class MedicineManager {
         System.out.print("Enter stock quantity: ");
         int stockQuantity = scanner.nextInt();
         scanner.nextLine();
-        System.out.print("Enter expiry date (yyyy-MM-dd): ");
-        Date expiryDate = new GregorianCalendar().getTime(); // Placeholder for simplicity
+
+        System.out.print("Enter expiry date (yyyy-mm-dd): ");
+        String dateInput = scanner.nextLine();
+        String[] date = dateInput.split("-");
+        Date expiryDate = new GregorianCalendar(Integer.parseInt(date[0]), Integer.parseInt(date[1]), Integer.parseInt(date[2])).getTime();
+
         System.out.print("Enter manufacturer: ");
         String manufacturer = scanner.nextLine();
 
@@ -122,7 +135,7 @@ public class MedicineManager {
     }
 
     public void processPrescription() {
-        // Implement prescription processing logic here
+        // prescription processing logic
     }
 
     public void displayInventory() {
@@ -132,6 +145,7 @@ public class MedicineManager {
             System.out.println("Current inventory:");
             medicines.forEach(Medicine::display);
         }
+        System.out.println();
     }
 
     private Medicine findMedicineById(int id) {
