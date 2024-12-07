@@ -9,11 +9,11 @@ public class MedicineManager {
     private int medicineIdCounter = 1;
 
     public MedicineManager() {
-        medicines.add(new Medicine(1, "Paracetamol", "Painkiller", 1.99, 50, new Date(2025 - 1900, 5, 1), "ABC Pharma"));
-        medicines.add(new Medicine(2, "Aspirin", "Painkiller", 2.49, 5, new Date(2024 - 1900, 2, 15), "XYZ Pharma"));
-        medicines.add(new Medicine(3, "Amoxicillin", "Antibiotic", 12.99, 20, new Date(2024 - 1900, 10, 30), "MediCare"));
-        medicines.add(new Medicine(4, "Cetirizine", "Antihistamine", 4.99, 100, new Date(2026 - 1900, 1, 20), "HealthCorp"));
-        medicines.add(new Medicine(5, "Ibuprofen", "Painkiller", 3.49, 8, new Date(2024 - 1900, 7, 15), "Wellness Inc."));
+        medicines.add(new Medicine(medicineIdCounter++, "Paracetamol", "Painkiller", 1.99, 50, new Date(2025 - 1900, 5, 1), "ABC Pharma"));
+        medicines.add(new Medicine(medicineIdCounter++, "Aspirin", "Painkiller", 2.49, 5, new Date(2024 - 1900, 2, 15), "XYZ Pharma"));
+        medicines.add(new Medicine(medicineIdCounter++, "Amoxicillin", "Antibiotic", 12.99, 20, new Date(2024 - 1900, 10, 30), "MediCare"));
+        medicines.add(new Medicine(medicineIdCounter++, "Cetirizine", "Antihistamine", 4.99, 100, new Date(2026 - 1900, 1, 20), "HealthCorp"));
+        medicines.add(new Medicine(medicineIdCounter++, "Ibuprofen", "Painkiller", 3.49, 8, new Date(2024 - 1900, 7, 15), "Wellness Inc."));
     }
 
     public void manageMedicines() {
